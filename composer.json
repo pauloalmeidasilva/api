@@ -19,7 +19,7 @@
     		"App\\":"app/"
     	},
         "files":[
-            "app/config/Constants.php"
+            "app/Config/Constants.php"
         ]
     }
 }
