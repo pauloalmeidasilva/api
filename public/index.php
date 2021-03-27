@@ -1,4 +1,5 @@
 <?php
+
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
@@ -53,7 +54,7 @@ $errorMiddleware = $app->addErrorMiddleware(true, true, true);
  * 
  * Here api requests will be inserted.
  */
-$app->get('/{name}', function (Request $request, Response $response, $args) {
+$app->get('/', function (Request $request, Response $response, $args) {
 
     $name = $args['name'];
 
