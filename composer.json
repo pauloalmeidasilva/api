@@ -1,5 +1,7 @@
 {
     "name": "pauloalmeidasilva/api_base",
+    "description": "API base para projetos futuros",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Paulo",
