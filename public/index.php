@@ -2,8 +2,19 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
+use Symfony\Component\Dotenv\Dotenv;
 
 require __DIR__ . '/../vendor/autoload.php';
+
+/**
+ * Carregamento do arquivo ENV
+ * 
+ * Ele carregará o arquivo ENV que está no diretório raiz do projeto. Toda
+ * variável contida no arquivo pode ser obtida pela chamada via $_SERVER ou $_ENV.
+ */
+$dotenv = new Dotenv();
+
+$dotenv->load(__DIR__.'/../.env');
 
 /**
  * Instantiate App
@@ -43,6 +54,7 @@ $errorMiddleware = $app->addErrorMiddleware(true, true, true);
  * Here api requests will be inserted.
  */
 $app->get('/{name}', function (Request $request, Response $response, $args) {
+
     $name = $args['name'];
 
     $response->getBody()->write("Hello, $name");
